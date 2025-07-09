@@ -1,0 +1,25 @@
+/* Importar Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@400;500&family=Sora:wght@600;700&family=Space+Grotesk:wght@600;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --background: #0F0F0F;
+  --text: #E5E5E5;
+  --primary: #3F88C5;
+  --secondary: #B8E986;
+  --emphasis: #FF6B6B;
+  --font-body: 'Inter', 'Manrope', sans-serif;
+  --font-headings: 'Space Grotesk', 'Sora', sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headings);
+}

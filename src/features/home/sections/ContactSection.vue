@@ -47,7 +47,7 @@
                   <IconPhone class="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h4 class="font-semibold text-white mb-1">Teléfono</h4>
+                  <h4 class="font-semibold text-white mb-1">Phone</h4>
                   <a href="tel:+1234567890" class="text-gray-300 hover:text-primary transition-colors">
                     +1 (234) 567-890
                   </a>
@@ -59,10 +59,10 @@
                   <IconMapPin class="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h4 class="font-semibold text-white mb-1">Ubicación</h4>
+                  <h4 class="font-semibold text-white mb-1">Location</h4>
                   <p class="text-gray-300">
-                    Ciudad de México, México<br>
-                    Remoto disponible
+                    Mexico City, Mexico<br>
+                    Remote available
                   </p>
                 </div>
               </div>
@@ -73,7 +73,7 @@
           <div class="backdrop-blur-xl bg-dark-background/20 rounded-3xl border border-white/10 p-6 md:p-8">
             <h3 class="text-xl md:text-2xl font-bold mb-6 text-primary flex items-center gap-3">
               <IconShare class="w-6 h-6" />
-              Síguenos
+              Follow us
             </h3>
             
             <div class="flex gap-4">
@@ -96,8 +96,8 @@
         <!-- Contact form -->
         <div class="animate-fade-up" style="animation-delay: 0.2s">
           <ContactForm 
-            title="¿Listo para Innovar?"
-            subtitle="Cuéntanos sobre tu proyecto"
+            title="Ready to Innovate?"
+            subtitle="Tell us about your project"
             @submit="handleContactSubmit"
           />
         </div>

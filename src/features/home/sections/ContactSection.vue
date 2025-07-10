@@ -11,11 +11,11 @@
       <!-- Section header -->
       <div class="text-center mb-12 md:mb-16">
         <h2 class="inline-block relative font-headings text-3xl md:text-4xl lg:text-5xl font-bold mb-4 animate-fade-in">
-          <span class="relative z-10">Hablemos de tu Proyecto</span>
+          <span class="relative z-10">Let's Talk About Your Project</span>
           <span class="absolute -bottom-2 left-0 w-full h-3 bg-secondary/10 rounded-full"></span>
         </h2>
         <p class="text-gray-300 max-w-2xl mx-auto animate-fade-in-delay">
-          ¿Listo para transformar tu idea en realidad? Contáctanos para una consulta gratuita y sin compromiso.
+          Ready to turn your idea into reality? Contact us for a free, no-obligation consultation.
         </p>
       </div>
       
@@ -26,7 +26,7 @@
           <div class="backdrop-blur-xl bg-dark-background/20 rounded-3xl border border-white/10 p-6 md:p-8">
             <h3 class="text-xl md:text-2xl font-bold mb-6 text-primary flex items-center gap-3">
               <IconMessageCircle class="w-6 h-6" />
-              Información de Contacto
+              Contact Information
             </h3>
             
             <div class="space-y-6">
@@ -36,8 +36,8 @@
                 </div>
                 <div>
                   <h4 class="font-semibold text-white mb-1">Email</h4>
-                  <a href="mailto:contacto@softtech.com" class="text-gray-300 hover:text-primary transition-colors">
-                    contacto@softtech.com
+                  <a href="mailto:contact@softtech.com" class="text-gray-300 hover:text-primary transition-colors">
+                    contact@softtech.com
                   </a>
                 </div>
               </div>
@@ -193,8 +193,8 @@ const animate = () => {
 
 const handleContactSubmit = (formData) => {
   console.log('Form submitted:', formData);
-  // Aquí iría la lógica para enviar el formulario
-  alert('¡Gracias por contactarnos! Te responderemos pronto.');
+  // Here would go the form submission logic
+  alert('Thank you for contacting us! We will respond soon.');
 };
 
 function handleResize() {

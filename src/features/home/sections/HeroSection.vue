@@ -13,14 +13,14 @@
         <div class="text-center lg:text-left">
           <div class="mb-6 md:mb-8">
             <h2 class="text-lg md:text-xl font-semibold text-secondary mb-3 md:mb-4 animate-slide-up">
-              Innovación Digital & IA
+              Digital Innovation & AI
             </h2>
             <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-headings mb-4 md:mb-6 animate-slide-up-delay-1 gradient-text">
-              Transformamos Ideas en Soluciones Digitales
+              Transforming Ideas into Digital Solutions
             </h1>
             <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-6 md:mb-8 animate-slide-up-delay-2 max-w-2xl mx-auto lg:mx-0">
-              Potencia tu negocio con soluciones tecnológicas a medida. 
-              Expertos en desarrollo de software, IA y transformación digital.
+              Boost your business with custom technology solutions. 
+              Experts in software development, AI and digital transformation.
             </p>
             
             <!-- Stats -->
@@ -30,7 +30,7 @@
                 prefix="+"
                 :duration="2500"
               >
-                Proyectos
+                Projects
               </CountUpNumber>
               
               <CountUpNumber 
@@ -38,7 +38,7 @@
                 suffix="%"
                 :duration="2000"
               >
-                Satisfacción
+                Satisfaction
               </CountUpNumber>
               
               <CountUpNumber 
@@ -46,7 +46,7 @@
                 suffix="/7"
                 :duration="1500"
               >
-                Soporte
+                Support
               </CountUpNumber>
             </div>
           </div>
@@ -61,7 +61,7 @@
               <template #icon-left>
                 <IconCalendar class="w-5 h-5" />
               </template>
-              Agenda una Demo
+              Schedule a Demo
             </BaseButton>
             
             <BaseButton 
@@ -72,7 +72,7 @@
               <template #icon-left>
                 <IconFolder class="w-5 h-5" />
               </template>
-              Ver Portafolio
+              View Portfolio
             </BaseButton>
           </div>
         </div>
@@ -98,8 +98,8 @@ let particles = [];
 let animationFrameId;
 
 const handleFormSubmit = async (formData) => {
-  console.log('Formulario enviado:', formData);
-  // Aquí iría la lógica para procesar el formulario
+  console.log('Form submitted:', formData);
+  // Here would go the logic to process the form
 };
 
 class Particle {

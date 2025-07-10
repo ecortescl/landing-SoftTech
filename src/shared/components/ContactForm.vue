@@ -20,6 +20,11 @@
 
       <!-- Form -->
       <form @submit.prevent="handleSubmit" class="space-y-4 md:space-y-6">
+        <!-- Error Message -->
+        <div v-if="errorMessage" class="p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-red-500 text-sm">
+          {{ errorMessage }}
+        </div>
+
         <!-- Input Fields -->
         <div class="space-y-3 md:space-y-4">
           <div 
@@ -34,6 +39,7 @@
             <div class="field-content">
               <label :for="field.name" class="field-label">
                 {{ field.label }}
+                <span v-if="field.required" class="text-red-500">*</span>
               </label>
               <component
                 :is="field.type === 'textarea' ? 'textarea' : 'input'"
@@ -45,6 +51,7 @@
                 @blur="focusedField = null"
                 :rows="field.type === 'textarea' ? 4 : undefined"
                 class="field-input"
+                :required="field.required"
               />
             </div>
           </div>
@@ -56,7 +63,7 @@
           class="submit-button group"
           :disabled="isSubmitting"
         >
-          <span class="relative z-10">{{ isSubmitting ? 'Enviando...' : 'Enviar Mensaje' }}</span>
+          <span class="relative z-10">{{ isSubmitting ? 'Sending...' : 'Send Message' }}</span>
           <IconSend class="w-5 h-5 ml-2 transform transition-transform group-hover:translate-x-1" />
           <div class="button-background"></div>
         </button>
@@ -67,6 +74,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue';
+import { ContactService } from '@/core/services/contact/contact.service';
 import {
   IconRocket,
   IconUserCircle,
@@ -78,37 +86,40 @@ import {
 const props = defineProps({
   title: {
     type: String,
-    default: '¿Listo para Innovar?'
+    default: 'Ready to Innovate?'
   },
   subtitle: {
     type: String,
-    default: 'Cuéntanos sobre tu proyecto'
+    default: 'Tell us about your project'
   }
 });
 
-const emit = defineEmits(['submit']);
+const emit = defineEmits(['submit', 'success', 'error']);
 
 const fields = [
   {
     name: 'name',
     type: 'text',
-    label: 'Nombre',
-    placeholder: 'Tu nombre completo',
-    icon: IconUserCircle
+    label: 'Name',
+    placeholder: 'Your full name',
+    icon: IconUserCircle,
+    required: true
   },
   {
     name: 'email',
     type: 'email',
     label: 'Email',
-    placeholder: 'tu@email.com',
-    icon: IconMail
+    placeholder: 'your@email.com',
+    icon: IconMail,
+    required: true
   },
   {
     name: 'message',
     type: 'textarea',
-    label: 'Mensaje',
-    placeholder: 'Describe tu proyecto o idea...',
-    icon: IconMessageDots
+    label: 'Message',
+    placeholder: 'Describe your project or idea...',
+    icon: IconMessageDots,
+    required: true
   }
 ];
 
@@ -120,11 +131,42 @@ const formData = reactive({
 
 const focusedField = ref(null);
 const isSubmitting = ref(false);
+const errorMessage = ref('');
+
+const validateForm = () => {
+  for (const field of fields) {
+    if (field.required && !formData[field.name]) {
+      errorMessage.value = `${field.label} is required`;
+      return false;
+    }
+  }
+  if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    errorMessage.value = 'Please enter a valid email address';
+    return false;
+  }
+  return true;
+};
 
 const handleSubmit = async () => {
-  isSubmitting.value = true;
   try {
-    await emit('submit', formData);
+    errorMessage.value = '';
+    if (!validateForm()) return;
+
+    isSubmitting.value = true;
+    const response = await ContactService.sendContactForm(formData);
+    
+    emit('submit', formData);
+    emit('success', response);
+
+    // Reset form
+    formData.name = '';
+    formData.email = '';
+    formData.message = '';
+    
+  } catch (error) {
+    console.error('Contact form submission error:', error);
+    errorMessage.value = error.message || 'An error occurred while sending your message';
+    emit('error', error);
   } finally {
     isSubmitting.value = false;
   }

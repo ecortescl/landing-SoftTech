@@ -8,11 +8,11 @@
       <!-- Section header -->
       <div class="text-center mb-12 md:mb-16">
         <h2 class="inline-block relative font-headings text-3xl md:text-4xl lg:text-5xl font-bold mb-4 animate-fade-in">
-          <span class="relative z-10">Nuestros Servicios</span>
+          <span class="relative z-10">Our Services</span>
           <span class="absolute -bottom-2 left-0 w-full h-3 bg-primary/10 rounded-full"></span>
         </h2>
         <p class="text-gray-300 max-w-2xl mx-auto animate-fade-in-delay">
-          Soluciones tecnológicas personalizadas para impulsar tu negocio al siguiente nivel
+          Custom technology solutions to take your business to the next level
         </p>
       </div>
       
@@ -43,7 +43,7 @@
             class="mt-auto self-start px-3 py-1.5 md:px-4 md:py-2 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors flex items-center gap-1 md:gap-2 group text-sm md:text-base"
             @click="openModal(service)"
           >
-            Más Información
+            More Information
             <IconArrowRight class="w-3 h-3 md:w-4 md:h-4 transform group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
@@ -63,7 +63,7 @@
         <p class="text-gray-300 text-sm md:text-base">{{ selectedService.description }}</p>
         
         <div>
-          <h5 class="font-bold mb-2 md:mb-3 text-white text-base md:text-lg">Características principales:</h5>
+          <h5 class="font-bold mb-2 md:mb-3 text-white text-base md:text-lg">Main Features:</h5>
           <ul class="space-y-2 md:space-y-3">
             <li v-for="(feature, i) in selectedService.features" :key="i" class="flex items-start gap-2">
               <IconCircleCheck class="w-4 h-4 md:w-5 md:h-5 text-secondary mt-0.5 flex-shrink-0" />
@@ -73,7 +73,7 @@
         </div>
         
         <div>
-          <h5 class="font-bold mb-2 md:mb-3 text-white text-base md:text-lg">Tecnologías utilizadas:</h5>
+          <h5 class="font-bold mb-2 md:mb-3 text-white text-base md:text-lg">Technologies Used:</h5>
           <div class="flex flex-wrap gap-2">
             <span 
               v-for="(tech, i) in selectedService.technologies" 
@@ -86,7 +86,7 @@
         </div>
         
         <div>
-          <h5 class="font-bold mb-2 md:mb-3 text-white text-base md:text-lg">Proceso de trabajo:</h5>
+          <h5 class="font-bold mb-2 md:mb-3 text-white text-base md:text-lg">Work Process:</h5>
           <ol class="space-y-2 md:space-y-3">
             <li v-for="(step, i) in selectedService.process" :key="i" class="flex items-start gap-2">
               <span class="flex items-center justify-center w-5 h-5 md:w-6 md:h-6 rounded-full bg-primary text-white text-xs md:text-sm font-bold flex-shrink-0">{{ i + 1 }}</span>
@@ -104,13 +104,13 @@
           class="px-3 py-1.5 md:px-4 md:py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors text-sm md:text-base"
           @click="showModal = false"
         >
-          Cerrar
+          Close
         </button>
         <button 
           class="px-3 py-1.5 md:px-4 md:py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-1 md:gap-2 text-sm md:text-base"
         >
           <IconCalendar class="w-3 h-3 md:w-4 md:h-4" />
-          Solicitar Servicio
+          Request Service
         </button>
       </template>
     </BaseModal>
@@ -142,92 +142,92 @@ const openModal = (service) => {
 
 const services = [
   {
-    title: 'Desarrollo Web',
-    description: 'Creamos aplicaciones web modernas, rápidas y escalables utilizando las tecnologías más avanzadas.',
+    title: 'Web Development',
+    description: 'We create modern, fast, and scalable web applications using the most advanced technologies.',
     icon: IconBrandReact,
     features: [
-      'Aplicaciones SPA con Vue y React',
-      'Diseño UI/UX personalizado',
-      'Optimización de rendimiento',
-      'Integración con APIs'
+      'SPA Applications with Vue and React',
+      'Custom UI/UX Design',
+      'Performance Optimization',
+      'API Integration'
     ],
     technologies: ['Vue.js', 'React', 'Tailwind CSS', 'Node.js', 'GraphQL'],
     process: [
       {
-        title: 'Análisis',
-        description: 'Entendemos tus necesidades y definimos los objetivos del proyecto.'
+        title: 'Analysis',
+        description: 'We understand your needs and define project objectives.'
       },
       {
-        title: 'Diseño',
-        description: 'Creamos wireframes y mockups para visualizar la interfaz.'
+        title: 'Design',
+        description: 'We create wireframes and mockups to visualize the interface.'
       },
       {
-        title: 'Desarrollo',
-        description: 'Implementamos el frontend y backend con las mejores prácticas.'
+        title: 'Development',
+        description: 'We implement frontend and backend with best practices.'
       },
       {
-        title: 'Pruebas',
-        description: 'Realizamos pruebas exhaustivas para garantizar la calidad.'
+        title: 'Testing',
+        description: 'We perform thorough testing to ensure quality.'
       }
     ]
   },
   {
-    title: 'Inteligencia Artificial',
-    description: 'Implementamos soluciones de IA que automatizan procesos y generan insights valiosos para tu negocio.',
+    title: 'Artificial Intelligence',
+    description: 'We implement AI solutions that automate processes and generate valuable insights for your business.',
     icon: IconRobot,
     features: [
-      'Machine Learning personalizado',
-      'Procesamiento de lenguaje natural',
-      'Análisis predictivo',
-      'Sistemas de recomendación'
+      'Custom Machine Learning',
+      'Natural Language Processing',
+      'Predictive Analysis',
+      'Recommendation Systems'
     ],
     technologies: ['TensorFlow', 'PyTorch', 'scikit-learn', 'NLTK', 'OpenAI API'],
     process: [
       {
-        title: 'Recopilación de datos',
-        description: 'Identificamos y recolectamos los datos necesarios.'
+        title: 'Data Collection',
+        description: 'We identify and collect the necessary data.'
       },
       {
-        title: 'Preparación',
-        description: 'Limpiamos y estructuramos los datos para el análisis.'
+        title: 'Preparation',
+        description: 'We clean and structure the data for analysis.'
       },
       {
-        title: 'Modelado',
-        description: 'Desarrollamos y entrenamos modelos de IA personalizados.'
+        title: 'Modeling',
+        description: 'We develop and train custom AI models.'
       },
       {
-        title: 'Implementación',
-        description: 'Integramos la solución en tu infraestructura existente.'
+        title: 'Implementation',
+        description: 'We integrate the solution into your existing infrastructure.'
       }
     ]
   },
   {
-    title: 'Desarrollo Backend',
-    description: 'Construimos APIs robustas y servicios backend escalables que potencian tus aplicaciones.',
+    title: 'Backend Development',
+    description: 'We build robust APIs and scalable backend services that power your applications.',
     icon: IconBrandPython,
     features: [
-      'APIs RESTful y GraphQL',
-      'Microservicios',
-      'Bases de datos SQL y NoSQL',
-      'Sistemas de autenticación seguros'
+      'RESTful and GraphQL APIs',
+      'Microservices',
+      'SQL and NoSQL Databases',
+      'Secure Authentication Systems'
     ],
     technologies: ['Node.js', 'Python', 'Django', 'Express', 'MongoDB', 'PostgreSQL'],
     process: [
       {
-        title: 'Arquitectura',
-        description: 'Diseñamos la estructura y los componentes del sistema.'
+        title: 'Architecture',
+        description: 'We design the system structure and components.'
       },
       {
-        title: 'Desarrollo',
-        description: 'Implementamos la lógica de negocio y las APIs.'
+        title: 'Development',
+        description: 'We implement business logic and APIs.'
       },
       {
-        title: 'Seguridad',
-        description: 'Aplicamos las mejores prácticas de seguridad y autenticación.'
+        title: 'Security',
+        description: 'We apply the best security practices and authentication.'
       },
       {
-        title: 'Escalabilidad',
-        description: 'Optimizamos para manejar grandes volúmenes de datos y usuarios.'
+        title: 'Scalability',
+        description: 'We optimize for handling large volumes of data and users.'
       }
     ]
   }
